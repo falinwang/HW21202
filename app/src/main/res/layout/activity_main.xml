@@ -12,9 +12,9 @@
         android:layout_height="43dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="163dp"
+        android:layout_marginTop="134dp"
         android:ems="10"
-        android:hint="E-mail"
+        android:hint="E mail"
         android:inputType="textPersonName|textWebEmailAddress"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,10 +26,12 @@
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/editTextEMail"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="227dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="192dp"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPersonName|textWebPassword"
+        android:typeface="normal"
         app:layout_constraintBottom_toTopOf="@+id/editTextEMail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,20 +40,21 @@
 
     <Button
         android:id="@+id/buttonLogin"
-        android:layout_width="wrap_content"
+        android:layout_width="220dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="154dp"
+        android:layout_marginBottom="226dp"
         android:text="Login" />
 
     <Button
         android:id="@+id/buttonRegister"
-        android:layout_width="wrap_content"
+        android:layout_width="219dp"
         android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/buttonLogin"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="91dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="116dp"
         android:text="Register" />
 
     <TextView
@@ -63,12 +66,21 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:layout_marginStart="0dp"
-        android:layout_marginTop="59dp"
+        android:layout_marginTop="71dp"
         android:gravity="center_horizontal"
-        android:text="Welcome to Plan2nite"
-        android:textSize="30sp"
+        android:text="Welcome to Roy's HW2"
+        android:textAllCaps="true"
+        android:textSize="24sp"
         android:textStyle="bold"
-        android:typeface="sans"
-        tools:text="Welcome to Plan2nite" />
+        tools:text="Welcome to Roy's HW2" />
+
+    <TextView
+        android:id="@+id/textViewSignupPromopt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="170dp"
+        android:text="Don't have an account?" />
 
 </RelativeLayout>

@@ -6,13 +6,20 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
-public class CheckActivity extends Activity {
+public class CheckActivity extends Activity implements View.OnClickListener {
+
+    Button buttonBackC;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_check);
+
+        buttonBackC = findViewById(R.id.buttonBackC);
+        buttonBackC.setOnClickListener(this);
     }
 
 
@@ -28,8 +35,8 @@ public class CheckActivity extends Activity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case R.id.home_activity_menu_item:
-                Intent checkActivityintent = new Intent(CheckActivity.this, Main2Activity.class);
-                startActivity(checkActivityintent);
+                Intent homeActivityintent = new Intent(CheckActivity.this, Main2Activity.class);
+                startActivity(homeActivityintent);
                 return true;
             case R.id.check_activity_menu_item:
                 return true;
@@ -38,10 +45,22 @@ public class CheckActivity extends Activity {
                 startActivity(addActivityintent);
                 return true;
             case R.id.logout_activity_menu_item:
-                return false;
+                Intent loginActivityintent = new Intent(CheckActivity.this, MainActivity.class);
+                startActivity(loginActivityintent);
+                return true;
             default:
                 return false;
         }
 
     }
+
+    @Override
+    public void onClick(View view) {
+        if (view == buttonBackC) {
+            Intent intentCheckBackHome = new Intent(CheckActivity.this, Main2Activity.class);
+            startActivity(intentCheckBackHome);
+        }
+    }
+
+    // TODO add actually function
 }

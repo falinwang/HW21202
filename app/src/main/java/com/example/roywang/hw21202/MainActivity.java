@@ -46,7 +46,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
                                 // Sign in success, update UI with the signed-in user's information
-                                Toast.makeText(MainActivity.this, "Welcome, New User!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(MainActivity.this, "Welcome, New User! Now login to your account.", Toast.LENGTH_SHORT).show();
                             } else {
                                 // If sign in fails, display a message to the user.
                                 Toast.makeText(MainActivity.this, "Access Denied, Try Again!", Toast.LENGTH_SHORT).show();
@@ -77,11 +77,6 @@ public class MainActivity extends Activity implements View.OnClickListener{
                         }
                     });
 
-
         }
-
-
-
-
     }
 }

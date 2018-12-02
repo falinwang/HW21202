@@ -8,9 +8,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
-public class Main2Activity extends Activity implements View.OnClickListener{
+public class Main2Activity extends Activity implements View.OnClickListener {
 
     Button buttonInventoryCheck, buttonInventoryAdd, buttonLogout;
 
@@ -18,11 +17,41 @@ public class Main2Activity extends Activity implements View.OnClickListener{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+
+
+//        buttonRegister = findViewById(R.id.buttonRegister);
+        buttonInventoryAdd = findViewById(R.id.buttonInventoryAdd);
+        buttonInventoryCheck = findViewById(R.id.buttonInventoryCheck);
+        buttonLogout = findViewById(R.id.buttonLogout);
+
+        buttonInventoryAdd.setOnClickListener(this);
+        buttonInventoryCheck.setOnClickListener(this);
+        buttonLogout.setOnClickListener(this);
+
+
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v == buttonInventoryCheck) {
+            // If click "Check Inventory" on Home Page
+            Intent intentH2Check = new Intent(Main2Activity.this, CheckActivity.class);
+            startActivity(intentH2Check);
+
+        } else if (v == buttonInventoryAdd) {
+            // If click "Add Inventory" on Home Page
+            Intent intentH2Add = new Intent(Main2Activity.this, ReceiveActivity.class);
+            startActivity(intentH2Add);
+
+        } else if (v == buttonLogout) {
+            // If click "Log out" on Home Page
+            Intent intentH2Login = new Intent(Main2Activity.this, MainActivity.class);
+            startActivity(intentH2Login);
+        }
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-
         MenuInflater optionsMenuInflater = getMenuInflater();
         optionsMenuInflater.inflate(R.menu.dropdown_menu, menu);
         return super.onCreateOptionsMenu(menu);
@@ -30,7 +59,7 @@ public class Main2Activity extends Activity implements View.OnClickListener{
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.home_activity_menu_item:
                 return true;
             case R.id.check_activity_menu_item:
@@ -42,24 +71,13 @@ public class Main2Activity extends Activity implements View.OnClickListener{
                 startActivity(addActivityintent);
                 return true;
             case R.id.logout_activity_menu_item:
-                return false;
+                Intent homeActivityintent = new Intent(Main2Activity.this, MainActivity.class);
+                startActivity(homeActivityintent);
+                return true;
             default:
                 return false;
         }
 
     }
 
-    @Override
-    public void onClick(View v) {
-        if(v == buttonInventoryCheck) {
-            // If click "Check Inventory on Home Page"
-            Intent intentH2Check = new Intent(this, CheckActivity.class);
-            startActivity(intentH2Check);
-
-        } else if(v == buttonInventoryAdd) {
-            // If click "Add Inventory on Home Page"
-            Intent intentH2Add = new Intent(this, ReceiveActivity.class);
-            startActivity(intentH2Add);
-        }
-    }
 }
